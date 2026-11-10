@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Absensi Siswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+    <div class="sidebar">
+        <div class="brand">
+            <span>🎓</span>
+            <div>
+                <h2>ABSENSI</h2>
+                <small>Student System</small>
+            </div>
+        </div>
+
+        <div class="menu-title">MENU UTAMA</div>
+
+        <a href="#dashboard" class="menu active">🏠 Dashboard</a>
+        <a href="#formAbsensi" class="menu">📝 Input Absensi</a>
+        <a href="#dataAbsensi" class="menu">📋 Data Absensi</a>
+
+        <div class="sidebar-bottom">
+            <button onclick="logout()" class="logout-btn">
+                ↪️ Keluar
+            </button>
+        </div>
+    </div>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Dashboard Absensi</h1>
+                <p>Selamat datang di sistem absensi siswa!</p>
+            </div>
+            <div class="admin-profile">
+                <span>👤</span>
+                <div>
+                    <b>Administrator</b>
+                    <small>Admin Sekolah</small>
+                </div>
+            </div>
+        </header>
+
+        <section id="dashboard">
+            <div class="welcome-card">
+                <div>
+                    <h2>Halo, Selamat Datang! 👋</h2>
+                    <p>
+                        Kelola kehadiran siswa dengan mudah,
+                        cepat, dan praktis.
+                    </p>
+                    <h4 id="todayDate"></h4>
+                </div>
+                <div class="welcome-emoji">📚</div>
+            </div>
+
+            <div class="stats-container">
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">👨‍🎓</div>
+                    <p>Total Absensi</p>
+                    <h2 id="totalData">0</h2>
+                    <small>Data tersimpan</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">✅</div>
+                    <p>Hadir / Dispen</p>
+                    <h2 id="totalHadir">0</h2>
+                    <small>Siswa hadir dan Dispen</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">📝</div>
+                    <p>Izin / Sakit</p>
+                    <h2 id="totalIzinSakit">0</h2>
+                    <small>Siswa izin dan sakit</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon red">❌</div>
+                    <p>Alfa</p>
+                    <h2 id="totalAlfa">0</h2>
+                    <small>Tanpa keterangan</small>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="formAbsensi" class="content-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>📝 Form Absensi Siswa</h2>
+                    <p>Silakan isi data kehadiran siswa.</p>
+                </div>
+            </div>
+
+            <form id="attendanceForm">
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" id="nama"
+                            placeholder="Masukkan nama siswa" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>NISN</label>
+                        <input type="text" id="nisn"
+                            placeholder="Masukkan NISN"
+                            inputmode="numeric"
+                            pattern="[0-9]{10}"
+                            maxlength="10"
+                            title="NISN harus terdiri dari 10 angka"
+                            required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Pilih Kelas</label>
+                        <select id="kelas" required>
+                            <option value="">-- Pilih Kelas --</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Tanggal Absensi</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Keterangan Kehadiran</label>
+                        <select id="status" required>
+                            <option value="">-- Pilih Keterangan --</option>
+                            <option value="Hadir">Hadir</option>
+                            <option value="Dispen">Dispen</option>
+                            <option value="Izin">Izin</option>
+                            <option value="Sakit">Sakit</option>
+                            <option value="Alfa">Alfa</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    💾 Simpan Absensi
+                </button>
+
+            </form>
+        </section>
+
+        <section id="dataAbsensi" class="content-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>📋 Data Absensi Siswa</h2>
+                    <p>Daftar kehadiran siswa yang telah disimpan.</p>
+                </div>
+            </div>
+
+            <div class="filter-container">
+                <input type="search" id="searchInput"
+                    placeholder="🔍 Cari nama atau NISN...">
+
+                <select id="filterKelas">
+                    <option value="">Semua Kelas</option>
+                </select>
+
+                <input type="date" id="filterTanggal">
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>NISN</th>
+                            <th>Kelas</th>
+                            <th>Tanggal</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="attendanceTable">
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="emptyMessage" class="empty-message">
+                Belum ada data absensi.
+            </p>
+
+        </section>
+
+        <footer>
+            © 2026 Student Attendance System
+            <br>
+            Made with 💜
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

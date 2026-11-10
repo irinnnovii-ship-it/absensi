@@ -1,0 +1,763 @@
+/* ==========================
+   RESET DAN DASAR
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #303047;
+}
+
+/* ==========================
+   HALAMAN LOGIN
+========================== */
+
+.login-body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(
+        135deg,
+        #dcd6ff,
+        #f4eaff,
+        #e0eaff
+    );
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255,255,255,0.92);
+    padding: 40px 35px;
+    border-radius: 25px;
+    box-shadow: 0 15px 45px rgba(92,72,150,0.15);
+    text-align: center;
+}
+
+.login-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.login-container h1 {
+    color: #6650b8;
+    font-size: 30px;
+}
+
+.subtitle {
+    color: #999;
+    margin: 8px 0 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #e4def5;
+    border-radius: 12px;
+    outline: none;
+    background: #faf9ff;
+    color: #333;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #8b75db;
+    box-shadow: 0 0 0 3px rgba(139,117,219,0.12);
+}
+
+.login-btn {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    background: linear-gradient(135deg,#8e77dc,#6650b8);
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover,
+.submit-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+#loginMessage {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #e05265;
+}
+
+.login-footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* ==========================
+   DASHBOARD
+========================== */
+
+.dashboard-body {
+    background: #f7f6fc;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 255px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #fff;
+    padding: 25px 18px;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.04);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 8px 35px;
+}
+
+.brand span {
+    font-size: 35px;
+}
+
+.brand h2 {
+    color: #7059c4;
+    font-size: 20px;
+}
+
+.brand small {
+    color: #aaa;
+    font-size: 11px;
+}
+
+.menu-title {
+    font-size: 11px;
+    color: #aaa;
+    font-weight: bold;
+    margin: 10px 12px 15px;
+}
+
+.menu {
+    display: block;
+    padding: 14px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #777;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu:hover,
+.menu.active {
+    background: #eee9ff;
+    color: #735bc5;
+    font-weight: bold;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    background: #fff0f1;
+    color: #dc5867;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ==========================
+   KONTEN UTAMA
+========================== */
+
+.main-content {
+    margin-left: 255px;
+    padding: 30px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-size: 25px;
+    color: #37314f;
+}
+
+.topbar p {
+    color: #999;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+
+.admin-profile span {
+    font-size: 28px;
+}
+
+.admin-profile b {
+    font-size: 13px;
+}
+
+.admin-profile small {
+    display: block;
+    color: #aaa;
+    font-size: 11px;
+}
+
+/* ==========================
+   WELCOME CARD
+========================== */
+
+.welcome-card {
+    background: linear-gradient(120deg,#8b75d5,#b29de9);
+    padding: 30px;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(130,105,200,0.15);
+}
+
+.welcome-card h2 {
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.welcome-card p {
+    font-size: 13px;
+    opacity: 0.9;
+    margin-bottom: 12px;
+}
+
+.welcome-card h4 {
+    font-size: 12px;
+}
+
+.welcome-emoji {
+    font-size: 65px;
+}
+
+/* ==========================
+   KARTU STATISTIK
+========================== */
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+}
+
+.stat-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.purple {
+    background: #eee9ff;
+}
+
+.green {
+    background: #e1f8ec;
+}
+
+.orange {
+    background: #fff1df;
+}
+
+.red {
+    background: #ffe8eb;
+}
+
+.stat-card p {
+    font-size: 13px;
+    color: #999;
+}
+
+.stat-card h2 {
+    font-size: 27px;
+    margin: 7px 0;
+    color: #443c61;
+}
+
+.stat-card small {
+    font-size: 11px;
+    color: #aaa;
+}
+
+/* ==========================
+   FORM DAN KONTEN
+========================== */
+
+.content-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    font-size: 19px;
+    color: #453c66;
+}
+
+.section-heading p {
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 5px 20px;
+}
+
+.submit-btn {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg,#907bdc,#7059c4);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+/* ==========================
+   FILTER DAN TABEL
+========================== */
+
+.filter-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-container input,
+.filter-container select {
+    padding: 12px;
+    border: 1px solid #e9e5f2;
+    border-radius: 10px;
+    background: #faf9ff;
+    outline: none;
+    min-width: 150px;
+}
+
+.filter-container input[type="search"] {
+    flex: 1;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+thead {
+    background: #f2efff;
+}
+
+th, td {
+    padding: 15px 12px;
+    text-align: left;
+    border-bottom: 1px solid #f0edf5;
+    font-size: 12px;
+}
+
+th {
+    color: #7059c4;
+    font-weight: bold;
+}
+
+td {
+    color: #666;
+}
+
+.status {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.status-hadir {
+    background: #e0f8e9;
+    color: #26975a;
+}
+
+.status-izin {
+    background: #fff1d9;
+    color: #d38a22;
+}
+
+.status-sakit {
+    background: #e4efff;
+    color: #477bc5;
+}
+
+.status-alfa {
+    background: #ffe5e8;
+    color: #d64f60;
+}
+
+.delete-btn {
+    border: none;
+    background: #ffe9eb;
+    color: #db4c5e;
+    padding: 7px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 25px;
+    color: #aaa;
+    font-size: 13px;
+}
+
+footer {
+    text-align: center;
+    color: #aaa;
+    padding: 15px;
+    font-size: 12px;
+}
+
+/* ==========================
+   RESPONSIVE HP
+========================== */
+
+@media (max-width: 1000px) {
+    .stats-container {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .brand {
+        padding-bottom: 15px;
+    }
+
+    .menu-title {
+        display: none;
+    }
+
+    .menu {
+        display: inline-block;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .sidebar-bottom {
+        margin-top: 10px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 18px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .topbar h1 {
+        font-size: 21px;
+    }
+
+    .welcome-card {
+        padding: 22px;
+    }
+
+    .welcome-card h2 {
+        font-size: 19px;
+    }
+
+    .welcome-emoji {
+        font-size: 40px;
+    }
+
+    .stats-container {
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-card h2 {
+        font-size: 23px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-card {
+        padding: 18px;
+    }
+
+    .filter-container {
+        flex-direction: column;
+    }
+
+    .filter-container input,
+    .filter-container select {
+        width: 100%;
+    }
+}
+
+
+/* ==================================
+   MODAL KONFIRMASI ESTETIK
+================================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(38, 28, 75, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 35px 30px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #f5f0ff
+    );
+
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 25px;
+
+    box-shadow: 0 20px 60px rgba(56, 39, 105, 0.25);
+
+    animation: modalPop 0.35s ease;
+}
+
+.modal-icon {
+    width: 85px;
+    height: 85px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 20px;
+
+    font-size: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #eee7ff,
+        #ddd0ff
+    );
+
+    border-radius: 25px;
+}
+
+.modal-box h2 {
+    color: #514078;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.modal-box p {
+    color: #89829d;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.modal-buttons button {
+    flex: 1;
+    padding: 13px 15px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-weight: bold;
+    font-size: 13px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cancel-delete {
+    background: #eeeaf7;
+    color: #74668f;
+}
+
+.cancel-delete:hover {
+    background: #e0d9ef;
+    transform: translateY(-2px);
+}
+
+.confirm-delete {
+    background: linear-gradient(
+        135deg,
+        #9077df,
+        #7055c2
+    );
+
+    color: white;
+    box-shadow: 0 5px 15px rgba(112,85,194,0.2);
+}
+
+.confirm-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(112,85,194,0.3);
+}
+
+/* Animasi */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: scale(0.85) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Tampilan HP */
+
+@media (max-width: 480px) {
+    .modal-box {
+        padding: 28px 20px;
+    }
+
+    .modal-box h2 {
+        font-size: 19px;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+}
+
